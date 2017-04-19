@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);.header {
+  height: 60px;
+  background: #4A90E2;
+  border: 1px solid #979797; }
+
+.header-title {
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 24px; }
+
+.blogpost-container {
+  background: #FFFFFF;
+  border: 1px solid #979797;
+  flex: 1; }
+
+.home-container {
+  width: 100%;
+  height: 200px;
+  background: aqua;
+  margin: auto;
+  padding: 10px;
+  display: flex; }
+
+.work-container {
+  background: #FFFFFF;
+  flex: 0 0 65%; }

@@ -1,0 +1,51 @@
+{
+  "name": "levineblog",
+  "version": "1.0.0",
+  "description": "A blog for professor Levine",
+  "main": "webpack.config.js",
+  "scripts": {
+    "gunicorn": "gunicorn --bind=127.0.0.1:3001 app:App",
+    "build": "webpack --progress --verbose --colors --display-error-details --config webpack.config.js",
+    "clean": "rimraf static && rimraf templates",
+    "build:production": "npm run clean && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joonhyongcho/LevineBlog.git"
+  },
+  "keywords": [
+    "blog"
+  ],
+  "author": "Joon Cho and Joel Levine",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/joonhyongcho/LevineBlog/issues"
+  },
+  "homepage": "https://github.com/joonhyongcho/LevineBlog#readme",
+  "dependencies": {
+    "express": "^4.15.2",
+    "html-webpack-plugin": "^2.28.0",
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "webpack": "^2.4.1"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.2",
+    "css-loader": "^0.28.0",
+    "eslint": "^3.19.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-fbjs": "^1.1.1",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.30.4",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.3",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "node-sass": "^4.5.2",
+    "sass": "^0.5.0",
+    "sass-loader": "^6.0.3",
+    "style-loader": "^0.16.1",
+    "webpack-dev-server": "^2.4.2"
+  }
+}
