@@ -1,13 +1,14 @@
 const path = require('path');
 const webpack = require('webpack');
+
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
-  entry: [path.join(__dirname, 'src', 'entry.jsx'),
-    'webpack-dev-server/client?http://localhost:8080',
+  entry: ['webpack-dev-server/client?http://localhost:8080',
     'react-hot-loader/patch',
     'webpack/hot/only-dev-server',
+    path.join(__dirname, 'src', 'entry.jsx'),
   ],
 
 
@@ -16,13 +17,7 @@ module.exports = {
       {
         test: /\.jsx$/,
         exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            plugins: ['react-hot-loader/babel'],
-            presets: ['es2015', 'react'],
-          },
-        },
+        use: ['babel-loader'],
       },
       {
         test: /\.scss$/,
@@ -41,7 +36,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'static'),
     // match the output path
 
-    publicPath: '/',
+    publicPath: '/static/',
     // match the output `publicPath`
   },
   resolve: {
@@ -52,14 +47,14 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'index.js',
-    publicPath: '/',
+    publicPath: '/static/',
   },
 
   plugins: [
     new HtmlWebpackPlugin({
       template: 'src/index.tpl.html',
       inject: 'body',
-      filename: '../templates/index.html',
+      filename: '../static/index.html',
     }),
     new ExtractTextPlugin('style.css'),
     new webpack.HotModuleReplacementPlugin(),

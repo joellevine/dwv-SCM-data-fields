@@ -1,12 +1,23 @@
 /* eslint-env browser */
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import { AppContainer } from 'react-hot-loader';
-import Home from './Home';
-import Header from './Header';
+import { AppContainer } from 'react-hot-loader';
+import App from './App';
 
-ReactDOM.render(
-  <div>
-    <Header />
-    <Home />
-  </div>, document.getElementById('root'));
+const render = (Component) => {
+  ReactDOM.render(
+    <AppContainer>
+      <Component />
+    </AppContainer>,
+    document.getElementById('root'),
+  );
+};
+
+render(App);
+
+// Hot Module Replacement API
+if (module.hot) {
+  module.hot.accept('./App', () => {
+    render(App);
+  });
+}
