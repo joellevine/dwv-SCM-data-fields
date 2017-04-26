@@ -26,6 +26,12 @@ module.exports = {
           use: ['css-loader', 'sass-loader'],
         }),
       },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          use: ['style-loader', 'css-loader'],
+        }),
+      },
     ],
   },
 
@@ -36,7 +42,7 @@ module.exports = {
     contentBase: path.join(__dirname, 'static'),
     // match the output path
 
-    publicPath: '/static/',
+    publicPath: '/static',
     // match the output `publicPath`
   },
   resolve: {
@@ -47,7 +53,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'static'),
     filename: 'index.js',
-    publicPath: '/static/',
+    publicPath: '/static',
   },
 
   plugins: [
