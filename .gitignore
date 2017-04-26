@@ -3,3 +3,5 @@ venv/
 *.pdf
 *.sketch
 static/
+semantic/
+semantic.json
