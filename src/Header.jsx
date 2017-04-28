@@ -15,12 +15,12 @@ const Awesome = () => (
 export default () => (
   <div className={'home-header'}>
     <div className={'header-title'}>Levine Analytics Blog</div>
-    <Link to="/">Home</Link>
-    <Link to="/Route">Routes</Link>
-    <Link to="/Habits">Habits</Link>
-    <Switch >
+    <div className={'links'}>
+      <Link to="/">Home</Link>
+      <Link to="/Route">Routes</Link>
+      <Link to="/Habits">Habits</Link>
       <Route exact path="/Route" component={Awesome} />
-    </Switch>
+    </div>
   </div>
 );
 
