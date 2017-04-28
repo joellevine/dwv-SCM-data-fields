@@ -6,3 +6,4 @@ static/
 semantic/
 semantic.json
 .env
+.DS_Store

@@ -23,7 +23,7 @@ LifeArea.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const LifeAreaContainer = (props) => {
+const LifeAreaContainer = () => {
   return (
     <div>
      {props.lifeareas}
